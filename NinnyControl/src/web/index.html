@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>NinnyControl Dashboard</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <h1>NinnyControl</h1>
+        <p class="subtitle">Discord moderation & utility bot dashboard</p>
+      </div>
+      <div class="header-right">
+        <div id="authStatus"></div>
+      </div>
+    </header>
+
+    <main>
+      <section class="card" id="overview">
+        <h2>Overview</h2>
+        <div class="stats-grid">
+          <div class="stat">
+            <span class="label">Bot</span>
+            <span class="value" id="botTag">–</span>
+          </div>
+          <div class="stat">
+            <span class="label">Servers</span>
+            <span class="value" id="guildCount">0</span>
+          </div>
+          <div class="stat">
+            <span class="label">Commands Run</span>
+            <span class="value" id="commandsRun">0</span>
+          </div>
+          <div class="stat">
+            <span class="label">Warnings</span>
+            <span class="value" id="warningsGiven">0</span>
+          </div>
+          <div class="stat">
+            <span class="label">Mutes</span>
+            <span class="value" id="mutesIssued">0</span>
+          </div>
+          <div class="stat">
+            <span class="label">Spam Events</span>
+            <span class="value" id="spamEvents">0</span>
+          </div>
+          <div class="stat">
+            <span class="label">Messages Seen</span>
+            <span class="value" id="messagesSeen">0</span>
+          </div>
+          <div class="stat">
+            <span class="label">Tickets Opened</span>
+            <span class="value" id="ticketsOpened">0</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" id="guilds">
+        <h2>Guilds (Bot)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>ID</th>
+              <th>Members</th>
+            </tr>
+          </thead>
+          <tbody id="guildTableBody">
+            <tr><td colspan="3">Loading…</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card" id="manageGuildSection" style="display:none;">
+        <h2>Manage Guild Config</h2>
+        <div id="noGuildsMessage" class="muted"></div>
+
+        <div id="guildConfigContainer" style="display:none;">
+          <label class="field">
+            <span>Guild:</span>
+            <select id="manageGuildSelect"></select>
+          </label>
+
+          <div class="two-col">
+            <label class="field">
+              <span>Anti-Spam Enabled</span>
+              <input type="checkbox" id="cfgAntiSpam" />
+            </label>
+            <label class="field">
+              <span>Link Filter Enabled</span>
+              <input type="checkbox" id="cfgLinkFilter" />
+            </label>
+            <label class="field">
+              <span>Invite Filter Enabled</span>
+              <input type="checkbox" id="cfgInviteFilter" />
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Welcome Message</span>
+            <textarea id="cfgWelcomeMessage" rows="2" placeholder="Welcome {user} to {server}!"></textarea>
+          </label>
+
+          <label class="field">
+            <span>Goodbye Message</span>
+            <textarea id="cfgGoodbyeMessage" rows="2" placeholder="{user} left the server."></textarea>
+          </label>
+
+          <label class="field">
+            <span>Blacklist Words (comma separated)</span>
+            <input type="text" id="cfgBlacklistWords" placeholder="word1, word2, word3" />
+          </label>
+
+          <button id="saveConfigBtn">Save Config</button>
+          <span id="saveStatus" class="muted"></span>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Built by <a href="https://github.com/Ninnyyy" target="_blank">@Ninnyyy</a></p>
+    </footer>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

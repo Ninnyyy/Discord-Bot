@@ -1,0 +1,20 @@
+{
+  "name": "ninnycontrol",
+  "version": "2.0.0",
+  "description": "Discord moderation & utility bot with web dashboard.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "deploy-commands": "node deploy-commands.js"
+  },
+  "author": "Ninnyyy",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "morgan": "^1.10.0",
+    "express-session": "^1.17.3",
+    "node-fetch": "^3.3.2"
+  }
+}
